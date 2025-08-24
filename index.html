@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKY Minecraft 服务器导航站</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .qq-group {
+            text-align: center;
+            background-color: #f0f9ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #e1f3ff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .qq-link {
+            color: #12b7f5;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 4px;
+            background-color: #e6f7ff;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .qq-link:hover {
+            background-color: #d1eaff;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(18, 183, 245, 0.2);
+        }
+
+        .server-section {
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .active-servers {
+            background-color: #f0f8ff;
+        }
+
+        .blocked-servers {
+            background-color: #fff0f0;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .blocked-title {
+            color: #7f2020;
+            border-bottom: 2px solid #e74c3c;
+        }
+
+        .server-card {
+            margin-bottom: 25px;
+        }
+
+        .server-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .server-name {
+            color: #2c3e50;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .server-info {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .server-info li {
+            margin-bottom: 8px;
+        }
+
+        .copy-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 3px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-left: 8px;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .blocked-btn {
+            background-color: #e74c3c;
+        }
+
+        .status-link {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .blocked-link {
+            color: #e74c3c;
+        }
+
+        .status-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SKY Minecraft 服务器导航站</h1>
+    
+    <!-- QQ群聊区域 - 放置在页面顶部 -->
+    <div class="qq-group">
+        <strong>加入官方QQ群聊获取更多信息：</strong>
+        <a href="https://qm.qq.com/q/ZSKhBdgiME" target="_blank" class="qq-link">点击加入QQ群</a>
+    </div>
+
+    <div class="server-section active-servers">
+        <h2 class="section-title">📡 正常运营服务器</h2>
+        
+        <div class="server-card">
+            <h3 class="server-name">🌟 SKY·原版服</h3>
+            <ul class="server-info">
+                <li><strong>服务器IP：</strong><span id="ip1">sky.mc.hi.cn:25568</span> 
+                    <button onclick="copyIP('ip1')" class="copy-btn">复制IP</button></li>
+                <li><strong>正版要求：</strong>无须正版</li>
+                <li><strong>支持版本：</strong>1.18.1-1.21.1</li>
+                <li><strong>在线时间：</strong>所有时间，除服务器重启维护</li>
+                <li><strong>状态查询：</strong><a href="https://list.mczfw.cn/?ip=sky.mc.hi.cn:25568" target="_blank" class="status-link">查看服务器是否开启 →</a></li>
+            </ul>
+        </div>
+
+        <div class="server-card">
+            <h3 class="server-name">🔧 HMZC·机械动力服务器</h3>
+            <ul class="server-info">
+                <li><strong>服务器IP：</strong><span id="ip2">sky.mc.hi.cn:25570</span> 
+                    <button onclick="copyIP('ip2')" class="copy-btn">复制IP</button></li>
+                <li><strong>正版要求：</strong>无须正版</li>
+                <li><strong>支持版本：</strong>1.20.1 Forge</li>
+                <li><strong>整合包获取：</strong>见群文件</li>
+                <li><strong>在线时间：</strong>所有时间，除服务器重启维护</li>
+                <li><strong>状态查询：</strong><a href="https://list.mczfw.cn/?ip=sky.mc.hi.cn:25570" target="_blank" class="status-link">查看服务器是否开启 →</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="server-section blocked-servers">
+        <h2 class="section-title blocked-title">⚠️ 封锁中服务器</h2>
+        
+        <div class="server-card">
+            <h3 class="server-name">🌐 基岩互通服</h3>
+            <ul class="server-info">
+                <li><strong>地址：</strong><span id="ip3">s11-1.yxsjmc.cn</span> 
+                    <button onclick="copyIP('ip3')" class="copy-btn blocked-btn">复制地址</button></li>
+                <li><strong>端口：</strong><span id="port1">48237</span> 
+                    <button onclick="copyIP('port1')" class="copy-btn blocked-btn">复制端口</button></li>
+                <li><strong>Java进入方式：</strong>地址+端口直接进入</li>
+                <li><strong>基岩支持版本：</strong>1.21.50-1.21.80x</li>
+                <li><strong>Java支持版本：</strong>1.18.1-1.21.5</li>
+                <li><strong>在线时间：</strong>所有时间，除服务器重启维护</li>
+                <li><strong>状态查询：</strong><a href="https://list.mczfw.cn/?ip=s11-1.yxsjmc.cn:48237" target="_blank" class="status-link blocked-link">查看服务器是否开启 →</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 SKY Minecraft 服务器导航站 | 所有服务器状态以实际连接为准</p>
+    </div>
+
+    <script>
+        function copyIP(elementId) {
+            const element = document.getElementById(elementId);
+            const textToCopy = element.textContent;
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // 显示复制成功提示
+                const button = element.nextElementSibling;
+                const originalText = button.textContent;
+                button.textContent = "已复制!";
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('复制失败: ', err);
+                alert('复制失败，请手动复制');
+            });
+        }
+    </script>
+</body>
+</html>
