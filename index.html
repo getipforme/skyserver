@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKY Minecraft 服务器导航</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind自定义颜色 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        accent: '#722ED1',
+                        dark: '#1D2129',
+                        light: '#F2F3F5'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-light to-white min-h-screen font-sans text-dark">
+    <!-- 顶部导航 -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa fa-cloud text-primary text-2xl"></i>
+                <h1 class="text-[clamp(1.2rem,3vw,1.8rem)] font-bold text-primary">SKY 服务器</h1>
+            </div>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#servers" class="text-dark/80 hover:text-primary transition-colors">服务器列表</a>
+                <a href="#info" class="text-dark/80 hover:text-primary transition-colors">玩家须知</a>
+                <a href="#contact" class="text-dark/80 hover:text-primary transition-colors">联系我们</a>
+            </div>
+            <button class="md:hidden text-dark text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="relative py-16 md:py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-primary/5 -z-10"></div>
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-6 text-dark text-shadow">
+                欢迎加入 <span class="text-primary">SKY 服务器</span>
+            </h2>
+            <p class="text-lg md:text-xl text-dark/70 max-w-2xl mx-auto mb-10">
+                在这里，你可以体验纯净的原版生存、机械动力的科技魅力以及云模组的便捷乐趣
+            </p>
+            <a href="#servers" class="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all shadow-lg hover:shadow-primary/30">
+                查看服务器列表
+                <i class="fa fa-arrow-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 服务器列表 -->
+    <section id="servers" class="py-16 container mx-auto px-4">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-2 text-center">服务器列表</h2>
+        <p class="text-center text-dark/60 mb-12 max-w-2xl mx-auto">选择你喜欢的服务器类型，加入我们的游戏社区，开始你的冒险之旅</p>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- 原版服 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100">
+                <div class="h-3 bg-primary"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-dark">SKY·原版服</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
+                            <i class="fa fa-check-circle"></i> 正常运行
+                        </span>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-server text-primary mt-1"></i>
+                            <div>
+                                <span class="text-dark/60 text-sm">服务器IP</span>
+                                <div class="flex items-center">
+                                    <span class="font-medium">sky.lilys.top:25568</span>
+                                    <button class="ml-2 text-xs bg-gray-100 hover:bg-gray-200 p-1 rounded transition-colors copy-btn" data-ip="sky.lilys.top:25568">
+                                        <i class="fa fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-java text-primary mt-1"></i>
+                            <div>
+                                <span class="text-dark/60 text-sm">Java版本</span>
+                                <p>1.20-1.21.8</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-mobile text-primary mt-1 text-lg"></i>
+                            <div>
+                                <span class="text-dark/60 text-sm">基岩版本</span>
+                                <p>1.21.70-1.21.100</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-clock-o text-primary mt-1"></i>
+                            <div>
+                                <span class="text-dark/60 text-sm">在线时间</span>
+                                <p>所有时间，除了服务器重启</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://list.mczfw.cn/?ip=sky.lilys.top:25568" target="_blank" class="block w-full text-center bg-primary/10 hover:bg-primary/20 text-primary py-2 rounded-lg transition-colors">
+                        查看服务器状态
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 机械动力服务器 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100">
+                <div class="h-3 bg-secondary"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-dark">SKY·机械动力服务器</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
+                            <i class="fa fa-check-circle"></i> 正常运行
+                        </span>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-server text-secondary mt-1"></i>
+                            <div>
+                                <span class="text-dark/60 text-sm">服务器IP</span>
+                                <div class="flex items-center">
+                                    <span class="font-medium">sky.lilys.top:25569</span>
+                                    <button class="ml-2 text-xs bg-gray-100 hover:bg-gray-200 p-1 rounded transition-colors copy-btn" data-ip="sky.lilys.top:25569">
+                                        <i class="fa fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-cogs text-secondary mt-1"></i>
+                            <div>
+                                <span class="text-dark/60 text-sm">版本</span>
+                                <p>1.20.1 Forge</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-file-archive-o text-secondary mt-1"></i>
+                            <div>
+                                <span class="text-dark/60 text-sm">整合包</span>
+                                <p>见群文件</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-clock-o text-secondary mt-1"></i>
+                            <div>
+                                <span class="text-dark/60 text-sm">在线时间</span>
+                                <p>所有时间，除了服务器重启</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://list.mczfw.cn/?ip=sky.lilys.top:25569" target="_blank" class="block w-full text-center bg-secondary/10 hover:bg-secondary/20 text-secondary py-2 rounded-lg transition-colors">
+                        查看服务器状态
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 云模组服务器 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100">
+                <div class="h-3 bg-accent"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-dark">SKY·云模组服务器</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
+                            <i class="fa fa-check-circle"></i> 正常运行
+                        </span>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-server text-accent mt-1"></i>
+                            <div>
+                                <span class="text-dark/60 text-sm">服务器IP</span>
+                                <div class="flex items-center">
+                                    <span class="font-medium">sky.lilys.top:25569</span>
+                                    <button class="ml-2 text-xs bg-gray-100 hover:bg-gray-200 p-1 rounded transition-colors copy-btn" data-ip="sky.lilys.top:25569">
+                                        <i class="fa fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-cloud text-accent mt-1"></i>
+                            <div>
+                                <span class="text-dark/60 text-sm">版本</span>
+                                <p>1.21.1 Fabric</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-plug text-accent mt-1"></i>
+                            <div>
+                                <span class="text-dark/60 text-sm">模组要求</span>
+                                <p>启动无需模组</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-clock-o text-accent mt-1"></i>
+                            <div>
+                                <span class="text-dark/60 text-sm">在线时间</span>
+                                <p>所有时间，除了服务器重启</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://list.mczfw.cn/?ip=sky.lilys.top:25569" target="_blank" class="block w-full text-center bg-accent/10 hover:bg-accent/20 text-accent py-2 rounded-lg transition-colors">
+                        查看服务器状态
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 玩家须知 -->
+    <section id="info" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-2 text-center">玩家须知</h2>
+            <p class="text-center text-dark/60 mb-12 max-w-2xl mx-auto">为了维护良好的游戏环境，请所有玩家遵守以下规则</p>
+            
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-sm p-6 md:p-8">
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                        <p>所有服务器均无需正版验证，玩家可以直接加入</p>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                        <p>请遵守服务器管理规定，禁止使用作弊客户端和恶意插件</p>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                        <p>尊重其他玩家，禁止恶意破坏他人建筑和财产</p>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                        <p>服务器重启时会有短暂离线，重启完成后即可正常连接</p>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                        <p>机械动力服务器的整合包请加入QQ群后在群文件中获取</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-16 container mx-auto px-4">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-2 text-center">联系我们</h2>
+        <p class="text-center text-dark/60 mb-12 max-w-2xl mx-auto">加入我们的QQ群，获取最新服务器资讯和技术支持</p>
+        
+        <div class="max-w-md mx-auto bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl p-8 text-center">
+            <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+                <i class="fa fa-qq text-3xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">加入官方QQ群</h3>
+            <p class="text-dark/70 mb-6">获取服务器最新动态、整合包下载和玩家交流</p>
+            <a href="https://qm.qq.com/q/Ghv5KJaCI2" target="_blank" class="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all shadow-md hover:shadow-primary/30">
+                <i class="fa fa-qq"></i>
+                加入QQ群
+            </a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <i class="fa fa-cloud text-primary text-2xl"></i>
+                <h2 class="text-xl font-bold">SKY 服务器</h2>
+            </div>
+            <p class="text-gray-400 mb-6">© 2025 SKY服务器</p>
+            <div class="flex justify-center gap-6 text-gray-400">
+                <a href="https://qm.qq.com/q/Ghv5KJaCI2" target="_blank" class="hover:text-primary transition-colors"><i class="fa fa-qq"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 复制提示框 -->
+    <div id="copyToast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-dark text-white px-4 py-2 rounded-lg shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none">
+        IP已复制到剪贴板
+    </div>
+
+    <script>
+        // 复制IP功能
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const ip = this.getAttribute('data-ip');
+                navigator.clipboard.writeText(ip).then(() => {
+                    // 显示提示
+                    const toast = document.getElementById('copyToast');
+                    toast.style.opacity = '1';
+                    setTimeout(() => {
+                        toast.style.opacity = '0';
+                    }, 2000);
+                });
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
